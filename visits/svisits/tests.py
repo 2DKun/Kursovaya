@@ -1,3 +1,11 @@
 from django.test import TestCase
 
-# Create your tests here.
+import sqlite3
+
+conn = sqlite3.connect(r'E:\Kursov\Rursovaya\visits\db.sqlite3')
+cur = conn.cursor()
+
+
+cur.execute("""SELECT * FROM students""")
+#cur.execute("""SELECT * FROM visits""")
+print(cur.fetchall())
