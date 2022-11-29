@@ -39,6 +39,7 @@ INSTALLED_APPS = [
     'svisits',
     'rest_framework',
     'api',
+    'drf_spectacular',
 ]
 
 CORS_ORIGIN_ALLOW_ALL = True
@@ -129,4 +130,12 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 REST_FRAMEWORK = {
     'DEFAULT_SCHEMA_CLASS': 'drf_spectacular.openapi.AutoSchema',
+}
+
+
+SPECTACULAR_SETTINGS = {
+    'TITLE': 'Students API',
+    'DESCRIPTION': 'API that throws query to DB',
+    'VERSION': '1.0.0',
+    'SERVE_INCLUDE_SCHEMA': False,
 }

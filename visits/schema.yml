@@ -1,0 +1,33 @@
+openapi: 3.0.3
+info:
+  title: Students API
+  version: 1.0.0
+  description: API that throws query to DB
+paths:
+  /api/{req}:
+    get:
+      operationId: api_retrieve
+      parameters:
+      - in: path
+        name: req
+        schema:
+          type: string
+        required: true
+      tags:
+      - api
+      security:
+      - cookieAuth: []
+      - basicAuth: []
+      - {}
+      responses:
+        '200':
+          description: No response body
+components:
+  securitySchemes:
+    basicAuth:
+      type: http
+      scheme: basic
+    cookieAuth:
+      type: apiKey
+      in: cookie
+      name: sessionid
