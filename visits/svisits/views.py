@@ -3,13 +3,20 @@ from django.views.decorators.csrf import csrf_exempt
 from rest_framework.parsers import JSONParser
 from django.http.response import JsonResponse
 from django.http import HttpResponse
+from sqlite3 import Error
 import sqlite3
 
 def showme(req):
-    conn = sqlite3.connect(r'E:\Kursov\Rursovaya\visits\db.sqlite3')
-    cur = conn.cursor()
-    cur.execute(f"{req}")
-    resp = cur.fetchall()
+    try:
+        conn = sqlite3.connect(r'E:\Kursov\Rursovaya\visits\db.sqlite3')
+        cur = conn.cursor()
+        cur.execute(f"{req}")
+        try:
+            resp = str(cur.fetchall())
+        except:
+            resp = 'Запрос успешно выполнен!'
+    except (Exception, Error) as error:
+        resp = str(error)
     return resp
 
 def index(reqest, req):
