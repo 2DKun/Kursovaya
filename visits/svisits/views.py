@@ -8,7 +8,7 @@ import sqlite3
 
 def showme(req):
     try:
-        conn = sqlite3.connect(r'E:\Kursov\Rursovaya\visits\db.sqlite3')
+        conn = sqlite3.connect(r'C:\Users\kerg6\PycharmProjects\Kursov\Rursovaya\visits\db.sqlite3')
         cur = conn.cursor()
         cur.execute(f"{req}")
         try:
