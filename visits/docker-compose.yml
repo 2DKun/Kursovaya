@@ -3,6 +3,8 @@ services:
   app:
     build: .
     container_name: django_app
+    environment:
+      - SQLITE3_DB=db.sqlite3
     restart: always
     ports:
       - "80:8000"
