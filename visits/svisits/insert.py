@@ -3,7 +3,7 @@ import sqlite3
 
 import cursor as cursor
 
-conn = sqlite3.connect(r'C:\Users\kerg6\PycharmProjects\Kursov\Rursovaya\visits\db.sqlite3')
+conn = sqlite3.connect(r'C:\Users\kerg6\PycharmProjects\Kursovaya\visits\db.sqlite3')
 cur = conn.cursor()
 
 cur.execute("INSERT INTO students(student_id, name, surname, patronymic, sgroup, gender) VALUES(00921, 'Van', 'Tyomniy', 'Holmovich', 'INBO-01-20', 'male')")
