@@ -8,4 +8,4 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('svisits/', include('svisits.urls')),
     path('api/', include('api.urls')),
-] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
+]
